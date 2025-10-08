@@ -32,7 +32,10 @@
     "docs:deploy": "./scripts/update-docusaurus && cd docs-website && yarn deploy",
     "postinstall": "patch-package"
   },
-  "types": "src/index.d.ts",
+  "main": "dist/index.js",
+  "react-native": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "author": "@Nozbe",
   "homepage": "https://github.com/Nozbe/WatermelonDB#readme",
   "bugs": "https://github.com/Nozbe/WatermelonDB/issues",
@@ -58,6 +61,18 @@
     "type": "git",
     "url": "https://github.com/Nozbe/WatermelonDB.git"
   },
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "native",
+    "package.json"
+  ],
   "dependencies": {
     "@babel/runtime": "7.21.0",
     "@nozbe/simdjson": "3.1.0-wmelon1",
