@@ -1,10 +1,12 @@
 {
-  "main": "./index.js",
+  "main": "dist/index.js",
   "sideEffects": false,
-  "types": "src/index.d.ts",
+  "types": "dist/index.d.ts",
   "name": "@nozbe/watermelondb",
   "description": "Build powerful React Native and React web apps that scale from hundreds to tens of thousands of records and remain fast",
   "version": "0.27.1",
+  "react-native": "dist/index.js",
+  "module": "dist/index.js",
   "author": "@Nozbe",
   "homepage": "https://github.com/Nozbe/WatermelonDB#readme",
   "bugs": "https://github.com/Nozbe/WatermelonDB/issues",
@@ -30,6 +32,14 @@
     "type": "git",
     "url": "https://github.com/Nozbe/WatermelonDB.git"
   },
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": ["dist", "native", "package.json"],
   "dependencies": {
     "@babel/runtime": "7.21.0",
     "@nozbe/simdjson": "3.1.0-wmelon1",
